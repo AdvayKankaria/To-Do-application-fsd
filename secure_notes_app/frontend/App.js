@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${https://todo-api.onrender.com/api/tasks}/register`, { username, password });
+      await axios.post(`${API_URL}/register`, { username, password });
       alert("User registered");
     } catch (err) {
       alert(err.response?.data?.message || "Error registering user");
@@ -63,6 +64,10 @@ function Login() {
       <button type="submit">Login</button>
     </form>
   );
+}
+
+function Notes() {
+  return <div>Notes Page - Protected</div>;
 }
 
 export default App;
