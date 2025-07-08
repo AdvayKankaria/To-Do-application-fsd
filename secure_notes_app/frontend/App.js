@@ -23,7 +23,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API_URL}/register`, { username, password });
+      await axios.post(`${https://todo-api.onrender.com/api/tasks}/register`, { username, password });
       alert("User registered");
     } catch (err) {
       alert(err.response?.data?.message || "Error registering user");
